@@ -1,0 +1,42 @@
+.teamHeader {
+    display: flex;
+    text-transform: uppercase;
+    color: var(--heading-color);
+
+    .teamHeading {
+        flex: 1;
+        display: flex;
+        font-size: 1.2em;
+        font-weight: bolder;
+    }
+
+    .teamActions {
+        display: flex;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 5px 10px;
+        &:hover {
+            background-color: var(--secondary-color);
+            cursor: pointer;
+        }
+        .text {
+            display: block;
+        }
+    }
+    .teamIcon {
+        width: 20px;
+        height: 20px;
+        padding: 0 5px;
+    }
+}
+/* When the width is between 320px and 768px and netween 1301 to 1899 user one column layout */
+@media screen and (max-width: 768px) and (min-width: 320px), 
+    (max-width: 1899px) and (min-width: 1301px) {
+    .teamHeader {
+        .teamActions {
+            .text {
+                display: none;
+            }
+        }
+    }
+}

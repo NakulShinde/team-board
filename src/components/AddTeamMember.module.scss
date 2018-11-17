@@ -1,0 +1,61 @@
+
+.addTeamMember {
+    color: var(--primary-color);
+    font-weight: 700;
+    .memberAvatar {
+        width: 60px;
+        height: 60px;
+        position: relative;
+    }
+    .memberAdd {
+        opacity: 1;
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+        text-align: center;
+        -webkit-transition: 0.4s ease;
+        transition: 0.4s ease;
+        border-radius: 50%;
+        background-color: var(--secondary-color);
+    }
+    &:hover .memberAdd {
+        background-color: var(--color-white)
+    }
+    .memberAddSpan {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+        -ms-transform: translate(-50%, -60%);
+    }
+    .addDetails {
+        font-size: 15px;
+        padding: 16px 0;
+    }
+}
+/* When the width is between 769px and 1300px and above 1900 user two column layout*/
+@media screen and (max-width: 1300px) and (min-width: 769px), (min-width: 1900px) {
+    .addTeamMember {
+        .memberAdd {
+            width: 40px;
+            height: 40px;
+            margin: 16px 10px;
+        }
+        .memberAddSpan {
+            margin: 6px 1px;
+        }
+    }
+}
+/* When the width is between 320px and 768px and netween 1301 to 1899 user one column layout */
+@media screen and (max-width: 768px) and (min-width: 320px), 
+    (max-width: 1899px) and (min-width: 1301px) {
+    .addTeamMember {
+        .memberAdd {
+            width: 38px;
+            height: 38px;
+            margin: 10px;
+        }
+        .memberAddSpan {
+            margin: 0px;
+        }
+    }
+}

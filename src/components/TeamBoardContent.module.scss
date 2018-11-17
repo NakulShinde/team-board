@@ -1,0 +1,20 @@
+.teamContent {
+    margin: 16px 0;
+    display: grid;
+ }
+
+/* When the width is between 769px and 1300px and above 1900 user two column layout*/
+@media screen and (max-width: 1300px) and (min-width: 769px), (min-width: 1900px) {
+    .teamContent {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 72px;
+    }
+}
+/* When the width is between 320px and 768px and netween 1301 to 1899 user one column layout */
+@media screen and (max-width: 768px) and (min-width: 320px), 
+    (max-width: 1899px) and (min-width: 1301px) {
+    .teamContent {
+        grid-template-rows: 60px;
+        grid-template-columns: 1fr;
+    }
+}

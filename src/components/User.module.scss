@@ -1,0 +1,120 @@
+
+.teamMember {
+    display: flex;
+    
+    .memberAvatar {
+        position: relative;
+    }
+    .image {
+        opacity: 1;
+        width: 40px;
+        height: 40px;
+        margin: 16px 10px;
+        border-radius: 50%;
+    }
+    &:hover {
+        background-color: var(--secondary-color);
+        cursor: pointer;
+        .image {
+            opacity: 0.3;
+        }
+        .memberRemove {
+            opacity: 1;
+            color: var(--status-error-color);
+            background: var(--color-white);
+            border: 1px solid var(--color-white);
+        }
+    }
+
+    .memberRemove {
+        text-align: center;
+        transition: 0.4s ease;
+        position: absolute;
+        opacity: 0;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        &:hover {
+            border: 1px solid var(--status-error-color);
+            
+            &::before {
+                content: attr(data-tooltip);
+                position: absolute;
+                font-size: 10px;
+                z-index: 999;
+                white-space: nowrap;
+                background: var(--color-black);
+                color: var(--tooltip-text-color);
+                bottom: 100%;
+                left: 50%;
+                margin-bottom: 7px;
+                margin-left: -60%;
+                padding: 4px 8px;
+                border-radius: 3px;
+                -webkit-transition: opacity 0.4s ease-out;
+                transition: opacity 0.4s ease-out; 
+            }
+            &::after {
+                position: absolute;
+                bottom: 100%;
+                margin-left: -5px;
+                top: -7px;
+                border-top: 5px solid rgba(51, 51, 51, 0.9);
+                border-right: 5px solid transparent;
+                border-left: 5px solid transparent;
+                content: " ";
+            }
+        }
+       
+    }
+
+    .memberRemoveSpan {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+        -ms-transform: translate(-50%, -60%);
+    }
+    .memberDetails {
+        font-size: 15px;
+        height: 40px;
+        .memberUsername {
+            font-weight: 700;
+        }
+    }
+}
+
+/* When the width is between 769px and 1300px and above 1900 user two column layout*/
+@media screen and (max-width: 1300px) and (min-width: 769px), (min-width: 1900px) {
+    .teamMember {
+        .image {
+            margin: 16px 10px;
+        }
+        .memberRemove {
+            width: 40px;
+            height: 40px;
+            margin: 16px 10px;
+        }
+        .memberDetails {
+            padding: 16px 0;
+        }
+    }
+}
+
+/* When the width is between 320px and 768px and netween 1301 to 1899 user one column layout */
+@media screen and (max-width: 768px) and (min-width: 320px), 
+    (max-width: 1899px) and (min-width: 1301px) {
+    .teamMember {
+        .image {
+            margin: 10px;
+        }
+        .memberRemove {
+            width: 38px;
+            height: 38px;
+            margin: 10px;
+        }
+        .memberDetails {
+            padding: 10px 0;
+        }
+    }
+}
