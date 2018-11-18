@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import AutoCompleteField from './../AutoComplete/AutoCompleteField'
+import AutoCompleteField from './../../ExternalLibrary/AutoComplete/AutoCompleteField'
 
 import styles from './AddTeamMember.module.scss'
 import appStyle from './../../App.module.scss'
