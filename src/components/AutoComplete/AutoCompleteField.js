@@ -1,7 +1,7 @@
 import React from 'react'
 import Autosuggest from 'react-autosuggest';
 
-import User from './../User'
+import User from './../User/User'
 import {MEMBERS} from './../../shared/Constants'
 
 import './AutoCompleteField.css'

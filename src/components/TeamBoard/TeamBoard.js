@@ -1,7 +1,7 @@
 import React from 'react'
 
-import TeamBoardHeader from './TeamBoardHeader'
-import TeamBoardContent from './TeamBoardContent'
+import TeamBoardHeader from './../TeamBoardHeader/TeamBoardHeader'
+import TeamBoardContent from './../TeamBoardContent/TeamBoardContent'
 
 import styles from './TeamBoard.module.scss'
 

@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 
-import AutoCompleteField from './AutoComplete/AutoCompleteField'
+import AutoCompleteField from './../AutoComplete/AutoCompleteField'
 
 import styles from './AddTeamMember.module.scss'
-import appStyle from './../App.module.scss'
-import userStyle from './User.module.scss'
+import appStyle from './../../App.module.scss'
+import userStyle from './../User/User.module.scss'
 
 class AddTeamMember extends Component {
     constructor() {

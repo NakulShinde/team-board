@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 
-import AddTeamMember from './AddTeamMember'
-import User from './User'
-import ShowAll from './ShowAll'
+import AddTeamMember from './../AddTeamMember/AddTeamMember'
+import User from './../User/User'
+import ShowAll from './../../components/ShowAll/ShowAll'
 
-import {MEMBERS} from './../shared/Constants'
+import {MEMBERS} from './../../shared/Constants'
 
 import styles from './TeamBoardContent.module.scss'
 

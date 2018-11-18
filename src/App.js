@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
-import TeamBoard from './components/TeamBoard'
-import './App.css';
+import TeamBoard from './components/TeamBoard/TeamBoard'
 
 class App extends Component {
     render() {

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from './User.module.scss'
-import appStyle from './../App.module.scss'
+import appStyle from './../../App.module.scss'
 
 const UserRole = (props) => {
     return <div>
