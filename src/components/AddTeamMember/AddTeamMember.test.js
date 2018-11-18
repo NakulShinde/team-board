@@ -1,5 +1,5 @@
 import React from "react";
-import {mount} from "enzyme";
+import {mount, shallow} from "enzyme";
 import renderer from "react-test-renderer";
 
 import AddTeamMember from "./AddTeamMember";
@@ -25,8 +25,7 @@ it("render memberAdd div", () => {
 
 
 it("AddTeamMember state check", () => {
-    let elementClass = ['.', styles.memberAdd].join('');
-    let addMemberDiv = myWrapper.find(elementClass);
+    let addMemberDiv = myWrapper.find('.memberAdd');
     //showAutoSuggest should be false initially
     expect(myWrapper.state('showAutoSuggest')).toBe(false);
 
@@ -35,4 +34,27 @@ it("AddTeamMember state check", () => {
     let showAutoSuggest = myWrapper.state('showAutoSuggest')
 
     expect(showAutoSuggest).toBe(true);
+});
+
+it('AddTeamMember onBlurAutoSuggestField check', () => {
+    const wrapper = shallow(<AddTeamMember/>);
+    expect(wrapper.state('showAutoSuggest')).toEqual(false);
+    const instance = wrapper.instance();
+    instance.onAddMemberClick();
+    expect(wrapper.state('showAutoSuggest')).toEqual(true);
+    instance.onBlurAutoSuggestField();
+    expect(wrapper.state('showAutoSuggest')).toEqual(false);
+});
+
+it('AddTeamMember onSelectUserFromAutoComplete check', () => {
+    // const p = Promise.resolve('success');
+    const props = {
+        addMemberInTeam: jest.fn(() => {}),
+    };
+    const wrapper = shallow(<AddTeamMember {...props}/>);
+    const instance = wrapper.instance();
+    instance.onSelectUserFromAutoComplete({});
+    // await p
+
+    expect(props.addMemberInTeam).toHaveBeenCalled();
 });

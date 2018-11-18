@@ -26,6 +26,7 @@ class TeamBoardContent extends Component {
             .bind(this);
     }
     addMemberInTeam(member) {
+        //making sure new state should be updated with referance of previous state
         this.setState((prev, next) => {
             member = Object.assign({}, member, {
                 id: Math.floor(Math.random() * 1000)
