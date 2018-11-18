@@ -13,8 +13,9 @@
     .teamActions {
         display: flex;
         font-weight: 500;
-        font-size: 15px;
-        padding: 5px 10px;
+        font-size: 10px;
+        padding: 10px;
+        color: var(--primary-color);
         &:hover {
             background-color: var(--secondary-color);
             cursor: pointer;
@@ -24,8 +25,8 @@
         }
     }
     .teamIcon {
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
         padding: 0 5px;
     }
 }
