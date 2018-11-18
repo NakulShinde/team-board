@@ -14,3 +14,8 @@
 
 # Running test cases
 - npm test
+
+# Check Unit Test Code Coverage
+- npm run coverage
+
+- attaching test coverage
