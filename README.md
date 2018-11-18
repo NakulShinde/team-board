@@ -13,10 +13,10 @@
 - visit localhost:3000 in browser
 
 # Running test cases
-- npm test
+- #npm test
 
 # Check Unit Test Code Coverage
-- npm run coverage
+- #npm run coverage
 
 - attaching test coverage
 
