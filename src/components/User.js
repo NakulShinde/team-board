@@ -1,6 +1,7 @@
 import React from 'react'
 
 import styles from './User.module.scss'
+import appStyle from './../App.module.scss'
 
 const UserRole = (props) => {
     return <div>
@@ -8,24 +9,38 @@ const UserRole = (props) => {
         {(props.userRole.toLowerCase() === 'external') && <span className={styles.astricMark}>*</span>}
     </div>
 }
-const User = (props) => {
-    return <div className={styles.teamMember}>
-        <div className={styles.memberAvatar}>
-            <img
-                className={styles.image}
-                alt="avatar"
-                src="static/images/avatar-default.png"></img>
-            <div
-                data-tooltip="Remove"
-                className={styles.memberRemove}
-                onClick={() => props.removeMember(props.user.id)}>
-                <span className={styles.memberRemoveSpan}>x</span>
-            </div>
-        </div>
+
+const MemberDetails = (props) => {
+    return (
         <div className={styles.memberDetails}>
             <UserRole userRole={props.user.role}></UserRole>
             <div className={styles.memberUsername}>{props.user.username}</div>
         </div>
+    )
+}
+const UserAvatar = (props) => {
+    return (
+        <img
+            className={styles.image}
+            alt="avatar"
+            src={(props.url)
+            ? props.url
+            : "static/images/avatar-default.png"}></img>
+    )
+}
+const User = (props) => {
+    return <div className={styles.teamMember}>
+        <div className={styles.memberAvatar}>
+            <UserAvatar></UserAvatar>
+            {(props.removeMember) && <div
+                data-tooltip="Remove"
+                className={[styles.memberRemove, appStyle.toolTip].join(' ')}
+                onClick={() => props.removeMember(props.user.id)}>
+                <span className={styles.memberRemoveSpan}>x</span>
+            </div>
+}
+        </div>
+        <MemberDetails user={props.user}></MemberDetails>
     </div>
 }
 
