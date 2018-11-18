@@ -49,7 +49,7 @@ class AddTeamMember extends Component {
                 <div className={styles.memberAvatar}>
                     <div
                         data-tooltip="Add Member"
-                        className={[styles.memberAdd, appStyle.toolTip].join(' ')}
+                        className={`${styles.memberAdd} ${appStyle.toolTip}`}
                         onClick={() => this.onAddMemberClick()}>
                         <span className={styles.memberAddSpan}>+</span>
                     </div>
@@ -61,7 +61,7 @@ class AddTeamMember extends Component {
         }
 
         return (
-            <div className={[userStyle.teamMember, styles.addTeamMember].join(' ')}>
+            <div className={`${userStyle.teamMember} ${styles.addTeamMember}`}>
                 {content}
             </div>
         )

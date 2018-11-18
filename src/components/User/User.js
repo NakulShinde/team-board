@@ -34,7 +34,7 @@ const User = (props) => {
             <UserAvatar></UserAvatar>
             {(props.removeMember) && <div
                 data-tooltip="Remove"
-                className={[styles.memberRemove, appStyle.toolTip].join(' ')}
+                className={`${styles.memberRemove} ${appStyle.toolTip}`}
                 onClick={() => props.removeMember(props.user.id)}>
                 <span className={styles.memberRemoveSpan}>x</span>
             </div>

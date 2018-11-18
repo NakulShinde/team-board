@@ -3,7 +3,6 @@ import {mount, shallow} from "enzyme";
 import renderer from "react-test-renderer";
 
 import AddTeamMember from "./AddTeamMember";
-import styles from './AddTeamMember.module.scss'
 
 it("renders AddTeamMember snapshot correctly", () => {
     const tree = renderer
@@ -18,9 +17,7 @@ it("render a AddTeamMember", () => {
     expect(myWrapper.exists()).toBe(true);
 });
 it("render memberAdd div", () => {
-    let elementClass = ['.', styles.memberAdd].join('');
-    
-    expect(myWrapper.find(elementClass).length).toBe(1);
+    expect(myWrapper.find('.memberAdd').length).toBe(1);
 });
 
 
@@ -47,14 +44,12 @@ it('AddTeamMember onBlurAutoSuggestField check', () => {
 });
 
 it('AddTeamMember onSelectUserFromAutoComplete check', () => {
-    // const p = Promise.resolve('success');
     const props = {
         addMemberInTeam: jest.fn(() => {}),
     };
     const wrapper = shallow(<AddTeamMember {...props}/>);
     const instance = wrapper.instance();
     instance.onSelectUserFromAutoComplete({});
-    // await p
 
     expect(props.addMemberInTeam).toHaveBeenCalled();
 });
