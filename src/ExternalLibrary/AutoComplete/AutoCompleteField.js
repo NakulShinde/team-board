@@ -2,16 +2,10 @@ import React from 'react'
 import Autosuggest from 'react-autosuggest';
 
 import User from './../../components/User/User'
-import {MEMBERS} from './../../shared/Constants'
+import {MEMBERS, NOT_A_TEAM_MEMBER} from './../../shared/Data'
 
 import './AutoCompleteField.css'
 
-const NOT_A_TEAM_MEMBER = {
-    "username": "May be he/she not yet in you team?",
-    "role": "Team member not found",
-    "picture": "avatar-default.png",
-    "id": 0
-}
 const getSuggestions = value => {
     const inputValue = value
         .trim()

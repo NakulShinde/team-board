@@ -62,3 +62,10 @@ export const MEMBERS = [
         "id": 12
     }
 ]
+
+export const NOT_A_TEAM_MEMBER = {
+    "username": "May be he/she not yet in you team?",
+    "role": "Team member not found",
+    "picture": "avatar-default.png",
+    "id": 0
+}
