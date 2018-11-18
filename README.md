@@ -19,3 +19,5 @@
 - npm run coverage
 
 - attaching test coverage
+
+![testcoverage](https://user-images.githubusercontent.com/3436316/48676192-4b3aed00-eb89-11e8-82ad-914f23de4184.PNG)
